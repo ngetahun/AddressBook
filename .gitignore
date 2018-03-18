@@ -127,6 +127,7 @@ fabric.properties
 .idea/
 
 ### Java ###
+=======
 # Compiled class file
 *.class
 
@@ -207,3 +208,4 @@ GitHub.sublime-settings
 
 
 # End of https://www.gitignore.io/api/code,java,maven,eclipse,netbeans,sublimetext,intellij+all
+=======
