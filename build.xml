@@ -1,0 +1,46 @@
+<project name="Personal-Address" default="run">
+
+    <property name="src" location="src"/>
+    <property name="build" location="bin"/>
+    <property name="docs" location="docs"/>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${docs}"/>
+    </target>
+
+    <target name="compile" depends="clean, init" description="Compile ">
+        <echo message="Compiling..." />
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="yes"/>
+    </target>
+    <target name="run" depends="compile" description="">
+        <java classname="submission.Main" fork="yes">
+            <classpath>
+                <pathelement path="${build}" />
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="gendoc" description="Generate java documentation">
+        <javadoc packagenames="submission.*"
+                 sourcepath="${src}"
+                 defaultexcludes="yes"
+                 destdir="${docs}"
+                 author="true"
+                 version="true"
+                 use="true"
+                 windowtitle="Documentation">
+            <doctitle><![CDATA[<h1>Docs</h1>]]></doctitle>
+            <tag name="todo" scope="all" description="To do:"/>
+            <group title="Group 1 Packages" packages="submission.*"/>
+            <link offline="true" href="http://docs.oracle.com/javase/8/docs/api/" packagelistLoc="C:\tmp"/>
+            <link href="http://docs.oracle.com/javase/8/docs/api/"/>
+        </javadoc>
+
+    </target>
+
+    <target name="clean" description="Clean working directory">
+        <delete dir="${build}"/>
+    </target>
+</project>
