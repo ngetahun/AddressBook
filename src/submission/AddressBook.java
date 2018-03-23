@@ -30,7 +30,6 @@ public class AddressBook {
     public boolean addPerson(Person p){
         System.out.print("Preparing to add a person.");
 
-        // TODO: make sure to hash the entries
         Scanner input = new Scanner(System.in);
 
         // create a person
