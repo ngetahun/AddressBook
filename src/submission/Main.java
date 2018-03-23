@@ -14,6 +14,7 @@ public class Main{
 
         final String usage="Commands:\n"+
             "help - Display this message\n"+
+            "add - Add new person to the address book"+
             "search - Search the address book\n"+
             "edit - Edit the address directory\n"+
             "delete - Delete the address directory\n"+
